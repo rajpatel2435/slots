@@ -1,0 +1,12 @@
+---
+/* export const prerender = true; */
+import Layout from "../layouts/Layout.astro";
+import DraftPosts from "../components/templates/DraftPosts.astro";
+import KnowledgebaseDraftPosts from "../components/templates/KnowledgebaseDraftPosts.astro";
+
+const { postId } = Astro.props;
+---
+
+<Layout title="Online Casino Guides">
+    <KnowledgebaseDraftPosts postId={postId} />
+</Layout>

@@ -1,0 +1,20 @@
+DirectoryIndex
+# Use symlink "wproot" to rewrite to parent WP folder
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^img/(.*)$ /game-img/$1 [L]
+    RewriteRule ^images/(.*)$ /wp-content/uploads/$1 [L]
+    RewriteRule ^wp-json/(.*)$ wproot/wp-json/$1 [L]
+    #RewriteRule ^welcome/(.*)$ wproot/welcome/$1 [L]
+    
+</IfModule>
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_URI} !(/$|\.) 
+RewriteRule ^(.*)$ https://slotsparadise.com%{REQUEST_URI}/ [R=301,L]
+# Exclude Restart service
+RewriteCond %{REQUEST_URI} !^/the-beach/restart_server\.php$
+# Reverse Proxy to Node server
+RewriteRule ^(.*)?$ http://127.0.0.1:4321/$1 [P,L]
+

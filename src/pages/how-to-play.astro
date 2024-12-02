@@ -1,0 +1,105 @@
+---
+//export const prerender = true;
+import Layout from "../layouts/Layout.astro";
+
+import { CasinoGuidesArticles } from "../lib/api";
+
+import { getSeoData } from "../lib/seoUtils";
+const seo = await getSeoData(Astro);
+
+const data = await CasinoGuidesArticles();
+
+const sections = data.sectionsBasepress.edges;
+---
+
+<Layout title={seo?.title || "Online Casino Guides Archives - Slots Paradise"}>
+  <div
+  class="header-background relative py-16 flex items-center text-white font-giloryRegular"
+>
+  <!-- Image as background -->
+  <img
+    src="https://slotsparadise.com/wp-content/uploads/2024/11/sp_header_desk_1890x322_howtoplay.webp"
+    alt="Online Casino Guides Banner"
+    class="absolute inset-0 w-full h-full object-cover -z-10"
+  />
+  <div class="header-content-row w-[80%] mx-auto relative z-10">
+    <div class="page-title text-center">
+      <h1
+        class="entry-title text-2xl md:text-3xl font-giloryExtrabold mb-2 text-center text-white"
+      >
+        Online Casino Guides
+      </h1>
+      <p
+        class="text-[22px] font-giloryRegular font-semibold text-white text-center max-w-[800px] mx-auto px-2"
+      >
+        If you are looking for casino guides and tips to increase your chances
+        of winning, this is the perfect section for you. Check it at Slots
+        Paradise Casino!
+      </p>
+   
+    </div>
+  </div>
+</div>
+
+  <div
+    class="online_casino_guide guides_main mt-10 font-giloryRegular font-semibold max-w-[1200px] mx-auto"
+  >
+    <div class="post-bread font-semibold my-10">
+      <div>
+        <p>
+          <span
+            ><span><a href="/">Home</a></span> &gt;
+            <span><a href="/how-to-play/">Casino Guides</a></span>
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="inner_container flex flex-col md:flex-row justify-between px-2 mb-10"
+    >
+
+      <div
+        class="section-container w-full md:w-3/4 mt-5 md:mt-0 pl-0 md:pl-2 xl:pl-10"
+      >
+        <div
+          class="section_block grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+        >
+          {
+            sections.map((section) => (
+              <div class="guide_single_block bg-white rounded px-5 pt-5 border border-[#f2f2f2] flex flex-col justify-between">
+                <h2 class="flex items-center wp-block-heading">
+                  <i class="fa italic block pr-2 text-lg">&#xf02d;</i>
+                  <a
+                    class="font-giloryExtrabold text-[#2f0536] text-lg leading-4"
+                    href={`${section.node.uri}`}
+                  >
+                    {section.node.name}
+                  </a>
+                </h2>
+                {section.node.basepress.edges.map((article) => (
+                  <div class="hover:bg-[#ddd]">
+                    <p class="py-2 font-giloryRegular font-semibold border-b border-dashed leading-3 flex items-start px-2">
+                      <i class="fa text-gray-400 pr-1 pt-1 block">&#xf059;</i>
+                      <a class="text-sm" href={`${article.node.uri}`}>
+                        {article.node.title}
+                      </a>
+                    </p>
+                  </div>
+                ))}
+                <p class="pt-4 pb-2">
+                  <a
+                    class="py-2 block text-[#FD106A] text-sm"
+                    href={`${section.node.uri}`}
+                  >
+                    <span>View all {section.node.count} articles</span>
+                  </a>
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

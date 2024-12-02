@@ -1,0 +1,170 @@
+---
+//export const prerender = true;
+import LayoutLandingPage from "../layouts/LayoutLandingPage.astro";
+import HeaderLandingPage from "../components/LandingPage/HeaderLandingPage.astro";
+---
+
+<LayoutLandingPage title="Welcome" />
+
+<div class="main flex flex-col lg:flex-row welcome-page">
+  <div class="main-header">
+    <HeaderLandingPage />
+  </div>
+  <div class="main-content w-full">
+    <div
+      class="content-container relative bg-cover bg-center h-screen
+              bg-[url('https://slotsparadise.com/the-beach/images/2023/07/sm-slots.png')]
+              md:bg-[url('https://slotsparadise.com/the-beach/images/2023/07/medium-slots.png')]
+              lg:bg-[url('https://slotsparadise.com/the-beach/images/2023/07/PANTALLAS-3.png')]"
+    >
+      <div
+        class="header-content pt-[4%] lg:pl-[8%] lg:pt-[8%] text-center lg:text-left flex flex-col items-center lg:items-start"
+      >
+        <img
+          width="420"
+          height="143"
+          title="logo"
+          alt="logo"
+          src="https://slotsparadise.com/the-beach/images/2023/01/live-slot-logo.png"
+        />
+
+        <!-- Text Content -->
+        <div class="et_pb_header_content_wrapper">
+          <div class="content max-w-[475px]">
+            <div
+              class="flex flex-col md:flex-row md:items-center md:justify-between lg:flex-col lg:text-left"
+            >
+              <h1
+                class="text-[125px] lg:text-[170px] text-center md:text-left font-giloryExtrabold text-white tracking-[-3.75px] lg:tracking-[-5.13px] drop-shadow-xl"
+              >
+                $7,500
+              </h1>
+              <h2
+                class="sub_heading text-[20px] lg:text-[33px] md:text-[46px] tracking-[-.75px] lg:tracking-[-.99px] leading-[41px] lg:leading-[41px] text-center lg:text-center font-giloryExtrabold text-white mt-[-40px] md:mt-0 lg:mt-[-40px] mb-0"
+              >
+                WELCOME BONUS PACKAGE
+              </h2>
+            </div>
+
+            <div class="promo-image w-2/3 lg:w-1/2 mx-auto">
+              <img
+                src="https://slotsparadise.com/the-beach/images/2023/08/promo-1.png"
+                width="312"
+                height="47"
+              />
+            </div>
+
+            <div class="buttons mt-5 lg:mt-10 flex flex-col items-center">
+              <a
+                class="join-now block text-white w-[280px] lg:w-[330px] text-center text-2xl lg:text-4xl tracking-[0px] uppercase font-giloryBold py-4 lg:py-5 px-12 lg:px-16 rounded-[50px] bg-[#4b1e5e]"
+                href="https://slotsparadise.com/#register">Join Now</a
+              >
+              <a
+                class="terms button block text-white text-center lg:text-left mt-5 text-xl lg:text-2xl cursor-pointer font-giloryRegular lg:block absolute lg:relative left-0 right-0 m-auto max-w-[1024px] md:left-0 md:right-0 md:m-auto md:bottom-0 bottom-3"
+                id="popup-trigger"
+                href="#">Terms & Conditions</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Text Content end -->
+
+        <!-- Desktop Footer Image -->
+        <div
+          class="footer-img absolute bottom-5 right-5 lg:right-10 hidden lg:block lg:min-w-[800px]"
+        >
+          <img
+            class="rounded-[40px] w-full"
+            src="https://slotsparadise.com/the-beach/images/2023/01/live-dealer-footer-banner.png"
+            title="Support"
+            width="1548"
+            height="60"
+          />
+        </div>
+
+        <!-- Footer Image for Tablet and Mobile -->
+        <div
+          class="footer-img absolute bottom-10 left-1/2 transform -translate-x-1/2 w-full max-w-[840px] px-2 lg:hidden"
+        >
+          <img
+            class="rounded-[40px] w-full max-w-[840px] mx-auto mb-2"
+            width="840"
+            height="78"
+            src="https://slotsparadise.com/the-beach/images/2023/01/support.png"
+            title="support"
+            alt="support"
+          />
+          <img
+            class="rounded-[40px] w-full max-w-[840px] mx-auto"
+            width="840"
+            height="78"
+            src="https://slotsparadise.com/the-beach/images/2023/01/crypto-currency.png"
+            title="currency"
+            alt="currency"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup Section -->
+<section
+  class="popup w-11/12 lg:w-1/2 bg-white fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden transition-all overflow-auto"
+  id="popup-section"
+>
+  <div
+    class="popup__content overflow-auto px-4 lg:px-12 py-6 lg:py-12 text-black md:text-base sm:p-12 text-[12px]"
+  >
+    <div class="close absolute right-5 top-5 cursor-pointer" id="closeButton">
+      <p class="font-bold">&#x2715;</p>
+    </div>
+    <!-- Popup content goes here -->
+    <p>
+      Get a 250% bonus up to $2,500 on your first deposit plus a 150% bonus up
+      to $1,500 on your second and third deposit along with a 200% up to $2,000
+      on your fourth deposit.
+    </p>
+    <p>This offer can be claimed by new customers.</p>
+    <p>
+      Code: WELCOME1 can only be used once per account on their initial deposit.
+      250% up to $1,000.
+    </p>
+    <p>Code: WELCOME2 150% match bonus up to $1500 on your Second deposit</p>
+    <p>Code: WELCOME3 150% match bonus up to $1500 on your Third deposit</p>
+    <p>Code: WELCOME4 200% match bonus up to $2000 on your Fourth deposit</p>
+    <p>Minimum deposit $50</p>
+    <p>Maximum release: $5,000</p>
+    <p>Playthrough: 35x deposit + bonus</p>
+    <p>
+      Casino games at Slots Paradise allowing for bonus play will contribute
+      towards the wagering requirement criteria, as detailed below:
+    </p>
+    <p>
+      • Slots (excluding progressives), Bingo, Keno, Scratch cards and lottery:
+      100%<br />
+      • Blackjack, card games and Video Poker : 10%<br />
+      • Live Casino games, progressive slots, Craps, Roulette, Baccarat, Red Dog,
+      War, Texas Hold’em, Caribbean Stud, Pontoon, Crashgames, Fishing Games, Sic
+      Bo, Pai Gow, Domino, Draw Hi-Lo, Plinko, Fan Tan, Pok Deng and QiuQiu are not
+      permitted while using bonuses and they do not contribute towards meeting a
+      promotions playthrough.
+    </p>
+  </div>
+</section>
+
+<script>
+  const popupTrigger = document.getElementById("popup-trigger");
+  const popupSection = document.getElementById("popup-section");
+  const closeButton = document.getElementById("closeButton");
+
+  popupTrigger.addEventListener("click", (e) => {
+    e.preventDefault();
+    popupSection.classList.toggle("hidden");
+  });
+
+  closeButton.addEventListener("click", () => {
+    popupSection.classList.add("hidden");
+  });
+</script>

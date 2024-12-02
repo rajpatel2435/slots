@@ -1,0 +1,128 @@
+pipelines:
+  branches:
+    master:
+      - step:
+          name: Build assets
+          image: node:20.11.1
+          script:
+            # Install dependencies and build assets
+            - npm install
+            - npx update-browserslist-db@latest
+            - echo GRAPHQL_ENDPOINT=https://slotsparadise.com/wp-graphql/ >> .env.production
+            - echo ADMIN_AJAX_ENDPOINT=https://slotsparadise.com/wp-admin/admin-ajax.php >> .env.production
+            - npm run build
+            # Save build assets as an artifact
+          artifacts:
+            - dist/**
+            - node_modules/**
+            - .env.production
+      - step:
+          name: Rsync to production server
+          script:
+            # Copy .env file to the server
+            - scp .env.production $MKTCASINOS_USER@$MKTCASINOS_SERVER:applications/szkhyquxps/public_html/the-beach/
+
+            # Stop the lobby process to commit changes
+            - ssh $MKTCASINOS_USER@$MKTCASINOS_SERVER "pm2 stop the-beach"
+
+            # Update the remote with rsync
+            - rsync -zrSlh --delete --stats ./* $MKTCASINOS_USER@$MKTCASINOS_SERVER:applications/szkhyquxps/public_html/the-beach
+
+            # Copy .htaccess file to the server
+            - scp .htaccess $MKTCASINOS_USER@$MKTCASINOS_SERVER:applications/szkhyquxps/public_html/the-beach/
+
+            # Stop the lobby process to commit changes
+
+            - ssh $MKTCASINOS_USER@$MKTCASINOS_SERVER "pm2 start the-beach"
+
+      - step:
+          name: Purge Cache and notify MatterMost
+          script:
+            # Install JQ
+            - apt-get update && apt-get install -y jq
+
+            # Purge the cache
+            - chmod +x purge-cache.sh
+            - ./purge-cache.sh "$SERVER_ID_PROD" "$APP_ID_PROD" "$CD_API_EMAIL" "$CD_API_KEY"
+
+            # Send message to MatterMost
+            - COMMIT_MESSAGE=$(git log --format=%B -n 1 $BITBUCKET_COMMIT)
+            - COMMIT_DATE=$(git log -n 1 --pretty=format:'%ci' $BITBUCKET_COMMIT)
+            - COMMIT_AUTHOR=$(git log -n 1 --pretty=format:'%an' $BITBUCKET_COMMIT)
+            - >
+              curl -d '{
+                  "channel": "wp-team-activity",
+                  "username": "Bitbucket Pipelines",
+                  "text": "New commit deployed to #SlotsParadise **master** branch on ```Astro slotsparadise``` with the following message: \n ```\n'"$COMMIT_MESSAGE"' \nEnv: AstroSlotsParadise\nDate: '"$COMMIT_DATE"'\nAuthor: '"$COMMIT_AUTHOR"'\n ```"
+                }' -H "Content-Type: application/json" -X POST https://matter.dblexchange.com/hooks/t34yjuo6a3refeeafr3itdauge
+
+    dev:
+      - step:
+          name: Notify MatterMost
+          script:
+            # Send message to MatterMost
+            - COMMIT_MESSAGE=$(git log --format=%B -n 1 $BITBUCKET_COMMIT)
+            - COMMIT_DATE=$(git log -n 1 --pretty=format:'%ci' $BITBUCKET_COMMIT)
+            - COMMIT_AUTHOR=$(git log -n 1 --pretty=format:'%an' $BITBUCKET_COMMIT)
+            - >
+              curl -d '{
+                  "channel": "wp-team-activity",
+                  "username": "Bitbucket Pipelines",
+                  "text": "New commit deployed to #SlotsParadise **dev** branch on ```Astro slotsparadise``` with the following message: \n ```\n'"$COMMIT_MESSAGE"' \nEnv: AstroSlotsParadise\nDate: '"$COMMIT_DATE"'\nAuthor: '"$COMMIT_AUTHOR"'\n ```"
+                }' -H "Content-Type: application/json" -X POST https://matter.dblexchange.com/hooks/t34yjuo6a3refeeafr3itdauge
+
+    stg:
+      - step:
+          name: Build assets
+          image: node:20.11.1
+          script:
+            # Install dependencies and build assets
+            - npm install
+            - npx update-browserslist-db@latest
+            - echo GRAPHQL_ENDPOINT=https://slots-stg.hstreetmedia.net/wp-graphql/ >> .env.development
+            - echo ADMIN_AJAX_ENDPOINT=https://slots-stg.hstreetmedia.net/wp-admin/admin-ajax.php >> .env.development
+            - npm run build-dev
+            # Save build assets as an artifact
+          artifacts:
+            - dist/**
+            - node_modules/**
+            - .env.development
+      - step:
+          name: Rsync to Development server
+          script:
+            # Copy .env file to the server
+            - scp .env.development $MKTCASINOS_USER_DEV@$MKTCASINOS_SERVER_DEV:applications/qvucfjykmh/public_html/the-beach/
+
+            # Stop the beach process to commit changes
+            - ssh $MKTCASINOS_USER_DEV@$MKTCASINOS_SERVER_DEV "pm2 stop beach"
+
+            # Update the remote with rsync
+            - rsync -zrSlh --delete --stats ./* $MKTCASINOS_USER_DEV@$MKTCASINOS_SERVER_DEV:applications/qvucfjykmh/public_html/the-beach
+
+            # Copy .htaccess file to the server
+            - scp .htaccess $MKTCASINOS_USER_DEV@$MKTCASINOS_SERVER_DEV:applications/qvucfjykmh/public_html/the-beach/
+
+            # Stop the beach process to commit changes
+            - ssh $MKTCASINOS_USER_DEV@$MKTCASINOS_SERVER_DEV "pm2 start beach"
+
+      - step:
+          name: Purge cache and Notify MaterMost
+          script:
+            # Install JQ
+            - apt-get update && apt-get install -y jq
+
+            # Purge the cache
+            - chmod +x purge-cache.sh
+            - ./purge-cache.sh "$SERVER_ID_DEV" "$APP_ID_DEV" "$CD_API_EMAIL" "$CD_API_KEY"
+
+            # Send message to MatterMost
+            - COMMIT_MESSAGE=$(git log --format=%B -n 1 $BITBUCKET_COMMIT)
+            - COMMIT_DATE=$(git log -n 1 --pretty=format:'%ci' $BITBUCKET_COMMIT)
+            - COMMIT_AUTHOR=$(git log -n 1 --pretty=format:'%an' $BITBUCKET_COMMIT)
+            - >
+              curl -d '{
+                  "channel": "wp-team-activity",
+                  "username": "Bitbucket Pipelines",
+                  "text": "New commit deployed to #SlotsParadise **stg** branch on ```Astro slotsparadise``` with the following message: \n ```\n'"$COMMIT_MESSAGE"' \nEnv: AstroSlotsParadise\nDate: '"$COMMIT_DATE"'\nAuthor: '"$COMMIT_AUTHOR"'\n ```"
+                }' -H "Content-Type: application/json" -X POST https://matter.dblexchange.com/hooks/t34yjuo6a3refeeafr3itdauge
+

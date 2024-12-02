@@ -1,0 +1,35 @@
+---
+import Preview from "./preview.astro";
+import Knowledgebase from "./knowledgebase.astro";
+
+const url = Astro.request.url;
+
+// Function to extract parameter from URL
+function extractParameter(url, paramName) {
+  const searchParams = new URLSearchParams(new URL(url).search);
+  return searchParams.get(paramName);
+}
+
+const previewParam = extractParameter(url, "preview");
+const pageIdParam = extractParameter(url, "page_id");
+const pParam = extractParameter(url, "p");
+const postTypeParam = extractParameter(url, "post_type");
+
+let postId;
+if (previewParam === "true" || pageIdParam) {
+  postId = extractParameter(url, "p") || extractParameter(url, "page_id");
+} else if (postTypeParam === "knowledgebase") {
+  postId = extractParameter(url, "p") || extractParameter(url, "page_id");
+}
+---
+
+{
+  (previewParam === "true" && !(postTypeParam === "knowledgebase") && pParam) ||
+  pageIdParam ? (
+    <Preview postId={postId} />
+  ) : postTypeParam === "knowledgebase" ? (
+    <Knowledgebase postId={postId} />
+  ) : (
+    <script src="/script.js" />
+  )
+}

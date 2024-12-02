@@ -1,0 +1,232 @@
+---
+
+import "../styles/global.css";
+
+import { getSeoData } from "../lib/seoUtils";
+const seo = await getSeoData(Astro);
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+const fullUrl = Astro.request.url;
+const url = new URL(fullUrl);
+const searchParams = url.searchParams;
+
+const pageParam = searchParams.get("page");
+const pageTitleSuffix = pageParam
+  ? ` - Slots Paradise - Best Online Casino Games - Page ${pageParam}`
+  : "";
+
+const seoTitle = seo?.metaTitle
+  ? `${seo.metaTitle}${pageTitleSuffix}`
+  : `${title}${pageTitleSuffix}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="../scripts/login.js"></script>
+    <script src="../scripts/script.js"></script>
+    <script
+      src="https://slotsparadise.com/wp-shared-header-footer/common/lib/js/global.min.js?v=1.2.8"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://slotsparadise.com/wp-shared-header-footer/common/lib/styles/global.min.css?v=1.2.8"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/content/img/favicons/favicon.png?v=1711485276"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{seoTitle}</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://slotsparadise.com/wp-content/plugins/wp-customer-reviews/css/wp-customer-reviews.css?ver=3.6.8"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <style>
+      /* Register your custom font family and tell the browser where to find it. */
+
+      @font-face {
+        font-family: "Gilroy-Light";
+        src: url("/fonts/Gilroy-Light.woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Gilroy-Bold";
+        src: url("/fonts/Gilroy-Bold.woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Gilroy-Medium";
+        src: url("/fonts/Gilroy-Medium.woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Gilroy-Regular";
+        src: url("/fonts/Gilroy-Regular.woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Gilroy-ExtraBold";
+        src: url("/fonts/Gilroy-ExtraBold.woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TSTVXS8");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script type="text/javascript">
+      function setAffiliateCookie() {
+        // Drop affiliate tracking cookie
+        const urlParams = new URLSearchParams(window.location.search);
+
+        if (
+          urlParams.has("si") &&
+          urlParams.has("bt") &&
+          urlParams.has("dtag")
+        ) {
+          const cookieValue = encodeURIComponent(
+            `{"bt":"${urlParams.get("bt")}","dtag":"${urlParams.get(
+              "dtag",
+            )}","si":"${urlParams.get("si")}"}`,
+          );
+
+          const affCookieValue = `r_i=${cookieValue};max-age=2592000;path=/`;
+          document.cookie = affCookieValue;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        setAffiliateCookie();
+      });
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+
+  
+  </head>
+  <body>
+
+
+    <slot />
+
+
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"
+      async></script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TSTVXS8"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!--  Comm100 Live Chat Code -->
+    <div id="comm100-button-dynamic"></div>
+    <script type="text/javascript">
+      var Comm100API = Comm100API || {};
+
+      function loadLiveChat() {
+        var t = Comm100API;
+        function e(e) {
+          var a = document.createElement("script"),
+            c = document.getElementsByTagName("script")[0];
+          (a.type = "text/javascript"),
+            (a.async = !0),
+            (a.src = e + t.site_id),
+            c.parentNode.insertBefore(a, c);
+        }
+        (t.chat_buttons = t.chat_buttons || []),
+          t.chat_buttons.push({ div_id: "comm100-button-dynamic" }),
+          (t.site_id = 80000228),
+          (t.dynamic = true),
+          e("https://vue.comm100.com/livechat.ashx?siteId="),
+          setTimeout(function () {
+            t.loaded ||
+              e("https://standby.comm100vue.com/livechat.ashx?siteId=");
+          }, 15000);
+      }
+      // Function to check scroll and load chat
+      function checkScroll() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var windowHeight =
+          window.innerHeight || document.documentElement.clientHeight;
+        var documentHeight = document.documentElement.scrollHeight;
+
+        if (documentHeight - (scrollTop + windowHeight) < 100) {
+          window.removeEventListener("scroll", checkScroll);
+          loadLiveChat();
+        }
+      }
+      window.addEventListener("scroll", checkScroll);
+
+      // Fallback to load chat after a period if no scroll
+      setTimeout(function () {
+        window.removeEventListener("scroll", checkScroll);
+        loadLiveChat();
+      }, 15000);
+    </script>
+    <!-- End Comm100 Live Chat Code -->
+  </body>
+</html>

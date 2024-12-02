@@ -1,0 +1,1613 @@
+/* =Theme customization starts here
+------------------------------------------------------- */
+
+/* Default edits */
+
+@font-face {
+  font-family: "Gilroy-Light";
+  src: url("/wp-content/themes/slotsparadise/fonts/gilroy-bold-cufonfonts-webfont/Gilroy-Light.woff");
+  font-weight: normal;
+  /* Add the font-display property */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url("/wp-content/themes/slotsparadise/fonts/gilroy-bold-cufonfonts-webfont/Gilroy-Bold.woff");
+  font-weight: normal;
+  /* Add the font-display property */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy-Medium";
+  src: url("/wp-content/themes/slotsparadise/fonts/gilroy-bold-cufonfonts-webfont/Gilroy-Medium.woff");
+  font-weight: normal;
+  /* Add the font-display property */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy-Regular";
+  src: url("/wp-content/themes/slotsparadise/fonts/gilroy-bold-cufonfonts-webfont/Gilroy-Regular.woff");
+  font-weight: normal;
+  /* Add the font-display property */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy-ExtraBold";
+  src: url("/wp-content/themes/slotsparadise/fonts/gilroy-bold-cufonfonts-webfont/Gilroy-ExtraBold.woff");
+  font-weight: normal;
+  /* Add the font-display property */
+  font-display: swap;
+}
+
+/* #top-menu li {
+    padding-right: 4.5vw;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 10px;
+}
+
+/*** Hide Sidebar ***/
+/* .home .page-template-default #sidebar {display:none;} */
+
+/*** Expand the content area to fullwidth ***/
+
+/**************** Cutom css *****************************/
+
+/* h1, h2, h3, h4, h5, h6
+{
+	font-family: 'Gilroy-ExtraBold',Helvetica,Arial,Lucida,sans-serif !important;
+	font-weight: normal !important;
+}  */
+
+/*** Widget *******/
+.progress {
+  position: relative;
+  margin: 20px 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 48px;
+  overflow: hidden;
+  background: #efefef;
+}
+.bar {
+  position: relative;
+  float: left;
+  min-width: 1%;
+  height: 100%;
+  background: #ffa1b5;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.125) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.125) 50%,
+    rgba(255, 255, 255, 0.125) 75%,
+    transparent 75%,
+    transparent
+  );
+  border-radius: 0 27px 27px 0;
+  background-size: 90px 90px;
+}
+.percent {
+  position: absolute;
+  top: 26%;
+  left: 16px;
+  margin: 0;
+  font-family: "Gilroy-Light", Helvetica, Arial, Lucida, sans-serif, Helvetica,
+    Arial, Lucida, sans-serif;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+}
+
+.rating-col {
+  width: 100%;
+  margin-top: 20px;
+  color: #2f0536;
+  margin-bottom: 36px;
+}
+.rating-col p {
+  padding-bottom: 0;
+}
+.inner-page-img {
+  /*margin-top: -85px !important;*/
+  margin-top: 0 !important;
+}
+
+.wid-btn {
+  background: #a64485;
+  padding: 12px 30px;
+  color: #fff !important;
+  border-radius: 45px;
+  border: none;
+  box-shadow: 0px 8px 15px rgb(0 0 0 / 23%);
+  font-size: 20px;
+  font-family: "Gilroy-ExtraBold", Helvetica, Arial, Lucida, sans-serif !important;
+  font-weight: normal !important;
+}
+.btn-margin {
+  margin-right: 15px;
+}
+.gamevideo h2 {
+  font-family: "Gilroy-ExtraBold", Helvetica, Arial, Lucida, sans-serif !important;
+  font-size: 32px;
+  font-weight: 600;
+}
+.game-table {
+  border: 1px solid #ccc !important;
+  border-collapse: collapse;
+  padding: 20px;
+  table-layout: fixed;
+  width: 100%;
+}
+/* .gameinfo {
+  margin-top: -45px;
+} */
+.game-table caption {
+  background: #46104e;
+  padding: 20px;
+  color: #fff;
+  font-size: 26px;
+  border-radius: 20px 20px 0px 0;
+  font-family: "Gilroy-ExtraBold", Helvetica, Arial, Lucida, sans-serif !important;
+  font-weight: normal !important;
+}
+.et_pb_tabs_0.et_pb_tabs .et_pb_tabs_controls li a {
+  color: #2f0536 !important;
+}
+.game-table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+}
+
+.game-table td {
+  border-top: 1px px solid #eee;
+  padding: 10px 30px !important;
+  font-size: 16px;
+  color: #a64485 !important;
+  font-weight: bold;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.125) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.125) 50%,
+    rgba(255, 255, 255, 0.125) 75%,
+    transparent 75%,
+    transparent
+  ) !important;
+  background-size: 90px 90px !important;
+  position: relative;
+}
+.game-table td:before {
+  content: "";
+  background: url(https://slotsparadise.com/wp-content/uploads/2022/02/Path-6191.png);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  left: 12px;
+  top: 15px;
+}
+.game-table tr:nth-child(odd) {
+  background: #fdc5d1;
+}
+.game-table tr:nth-child(even) {
+  background: #ff93aa;
+}
+.char-table {
+  padding: 20px;
+  background: #eee;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  /*****menu ****/
+  .Menu--users ul {
+    padding-left: 0;
+  }
+  .Menu--users {
+    height: auto !important;
+  }
+  /* .slick-next {
+    right: -16px !important;
+} */
+  .Menu--users ul .pl-name_lastname {
+    max-width: 100% !important;
+    margin: 0 0 0px !important;
+    text-align: left !important;
+    padding-left: 20px;
+    border: 2px solid #ffa3b6 !important;
+    padding-top: 20px;
+  }
+  .Menu--users ul .pl-username {
+    grid-area: nl !important;
+    margin-top: 45px !important;
+    padding-left: 20px;
+  }
+  .Menu--users ul .pl-id {
+    grid-area: nl !important;
+    margin-top: 70px !important;
+    padding-left: 20px;
+  }
+  .Menu--users ul li:nth-child(4) {
+    grid-area: us !important;
+    padding-left: 20px !important;
+  }
+  .Menu--users ul li:nth-child(4)::before,
+  .Menu--users ul li:nth-child(4)::after {
+    display: none !important;
+  }
+
+  .menu-mobile-hide {
+    display: none !important;
+  }
+  .game-table {
+    border: 0;
+  }
+  .gamevideo {
+    margin-top: 0 !important;
+  }
+
+  ul#menu-footer-information li a {
+    font-size: 14px;
+  }
+  #menu-footer-the-beach li a {
+    font-size: 14px;
+  }
+  .school-section .et_pb_module {
+    margin-bottom: 0;
+    margin-top: 30px;
+  }
+  .school-section .et_pb_column {
+    margin-bottom: 0;
+  }
+  .the-beach-page:before {
+    background-position: top !important;
+  }
+  .char-table {
+    margin-top: 0 !important;
+  }
+  .percent {
+    font-size: 14px;
+  }
+  .progress {
+    margin: 10px 0 auto;
+    height: 34px;
+  }
+  /* .page-title {
+    padding-top: 60px;
+    text-align: center !important;
+	    margin-bottom: 10px !important;
+} */
+  .game-table caption {
+    font-size: 1.3em;
+  }
+
+  .gamevideo h2 {
+    font-size: 24px;
+  }
+
+  .game-table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  .game-table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: left;
+  }
+
+  .game-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .game-table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+.right-art {
+  width: 68%;
+  display: table-cell;
+  padding-left: 5%;
+  vertical-align: middle;
+}
+.header-news .published::before {
+  display: inline-block;
+  content: "\7d";
+  font-family: "ETmodules";
+  padding: 0 5px 0 0;
+}
+.right-art.knowledgebase {
+  padding-left: 0;
+}
+.sidebar-news ul {
+  padding-left: 0;
+}
+.content-news blockquote.has-text-align-right {
+  float: right;
+  width: 50%;
+  padding: 0 0 20px 50px;
+  text-align: left;
+}
+.content-news blockquote {
+  float: left;
+  width: 50%;
+  padding: 0 50px 20px 0;
+  text-align: left;
+  margin: 15px 0;
+}
+.right-art h3 {
+  margin-bottom: 0;
+}
+.right-art p {
+  color: #2f0536;
+  font-size: 16px;
+  line-clamp: 3; /* Standard property (future support) */
+  -webkit-line-clamp: 3; /* WebKit-specific property */
+  -webkit-box-orient: vertical; /* Necessary for -webkit-line-clamp */
+  display: -webkit-box; /* Required for the text to be treated as a flexible box */
+  overflow: hidden; /* Hide the overflowing text */
+}
+
+.right-art a {
+  color: #2f0536;
+  /*font-family: 'Gilroy-Light',Helvetica,Arial,Lucida,sans-serif,Helvetica,Arial,Lucida,sans-serif;*/
+}
+
+/************ Hambergur menu ****************/
+@media (min-width: 980px) {
+  .dep-btn {
+    text-align: center;
+    background: #1c8fdf;
+    color: #fff !important;
+    border: 1px solid #1c8fdf;
+    padding: 15px 27px !important;
+  }
+  .usd-btn {
+    text-align: center;
+    padding: 15px 27px !important;
+  }
+}
+
+/***********PDN CSS **********/
+
+.quick-title {
+  color: #ff688b;
+  font-family: "Gilroy-Light", Helvetica, Arial, Lucida, sans-serif;
+  font-size: 26px !important;
+  font-weight: 600;
+}
+.digit {
+  color: #2f0536;
+  font-size: 13px;
+  float: right;
+  margin-top: 12px;
+  margin-right: 15px;
+}
+
+.digit .perc_vals {
+  font-family: "Gilroy-Light", Helvetica, Arial, Lucida, sans-serif;
+  font-weight: 600;
+}
+/*********** CSS */
+
+/********** Casino menu *********/
+
+section#basepress_nav_widget-2 {
+  border: none;
+  border-radius: 10px;
+}
+.bpress-post-count {
+  background: #fd106a;
+  color: #fff;
+}
+.bpress-page-header h1 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 45px;
+}
+.bpress-page-header p {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+}
+a.bpress-viewall {
+  color: #fd106a !important;
+  font-weight: 600;
+}
+
+.bpress-crumbs-wrap {
+  background-color: transparent !important;
+}
+.bpress-page-header h2 {
+  color: #fff !important;
+  margin-bottom: 0px;
+  padding-bottom: 0;
+}
+.bpress-wrap h2 a {
+  font-size: 20px;
+  font-family: "Gilroy-ExtraBold", Helvetica, Arial, Lucida, sans-serif,
+    Helvetica, Arial, Lucida, sans-serif;
+  color: #2f0536 !important;
+  font-weight: 600;
+}
+.bpress-search-submit input[type="submit"] {
+  background-color: #ee98aa;
+}
+.bpress-main-header h1,
+.bpress-main-header h2 {
+  text-align: center;
+  color: #fd106a;
+}
+.bpress-viewall,
+.bpress-viewall:link,
+.bpress-viewall:visited {
+  color: #fd106a;
+}
+.bpress-nav-accordion ul.children {
+  background: #fff;
+}
+.bpress-nav-section span.bpress-nav-item:hover {
+  background-color: #fff;
+  border-left: none;
+}
+.bpress-section-title .bpress-section-icon {
+  color: #2f0536;
+  font-size: 20px;
+}
+.bpress-post-link:hover {
+  background-color: #f2f2f2;
+  border-left: none;
+  border-radius: 0;
+  color: #fff;
+}
+/* .page-title h1 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 32px;
+} */
+/********** Casino guides *********/
+
+.bpress-heading a {
+  color: #2f0536 !important;
+  font-weight: 600 !important;
+}
+.bpress-nav-accordion .bpress-nav-item-title {
+  font-weight: 600;
+}
+.bpress-post-link .bpress-heading {
+  font-size: 1em;
+}
+
+/********** Casino guides *********/
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {
+  #myModal {
+    display: none;
+  }
+} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .footer-div h4 {
+    font-size: 28px !important;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  #slide-in-open {
+    margin-left: 12px !important;
+    width: 26px !important;
+  }
+  /*  .games-content,
+  .dtwd_related-posts,
+  .inner-page-img {
+    padding: 0 20px;
+  }
+  .char-table {
+    margin-top: 14% !important;
+    margin-left: 20px;
+    margin-right: 20px;
+  } */
+  /*
+  .logo-img {
+    margin-left: 30px !important;
+  } */
+
+  /*.header-row .et_pb_column {
+    width: 48% !important;
+    margin-bottom: 0;
+  }
+  .footer-col-menu .et_mobile_nav_menu {
+    display: none;
+  }
+  .footer-col-menu .et_pb_menu__wrap {
+    display: inline;
+  }
+  .inner-page-img {
+    position: relative !important;
+    top: 0 !important;
+  } */
+}
+
+@media screen and (max-width: 768px) {
+  .Menu--users {
+    min-width: 90% !important;
+    top: 10px !important;
+  }
+
+  .Menu--users ul {
+    padding-left: 0;
+  }
+  .Menu--users ul .pl-name_lastname {
+    max-width: 100% !important;
+    margin: 0 0 0px !important;
+    text-align: left !important;
+    padding-left: 20px;
+    border: 2px solid #ffa3b6 !important;
+    padding-top: 20px;
+  }
+  .Menu--users ul .pl-username {
+    grid-area: nl !important;
+    margin-top: 45px !important;
+    padding-left: 20px;
+  }
+  .Menu--users ul .pl-id {
+    grid-area: nl !important;
+    margin-top: 70px !important;
+    padding-left: 20px;
+  }
+  .Menu--users ul li:nth-child(4) {
+    grid-area: us !important;
+    padding-left: 20px !important;
+  }
+  .Menu--users ul li:nth-child(4)::before,
+  .Menu--users ul li:nth-child(4)::after {
+    display: none !important;
+  }
+
+  .menu-mobile-hide {
+    display: none !important;
+  }
+
+  #myModal {
+    display: none;
+  }
+
+  /* .dep-btn{display: none !important;}	
+.usd-btn {
+    font-size: 18px;
+    padding-right: 1em !important;
+	border:none !important;
+}
+.usd-btn:active, .usd-btn:hover, .usd-btn:focus, .usd-btn:visited{
+	border:none !important;
+} */
+  /* .usd-btn:after {
+    content: '';
+    background-image: url(/content/img/design/icons/female.svg);
+    background-size: 100%;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+.Menu--users {
+   min-width: 100% !important;
+} */
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media screen and (max-width: 600px) {
+  /* .dep-btn
+    {
+        display: none !important;
+        font-size: 14px;
+        padding: 10px !important;
+    }
+.usd-btn {
+    font-size: 14px;
+    border: 1px solid #1c8fdf !important;
+    padding: 10px !important;
+}
+
+.usd-btn:after {
+    content: '';
+    background-image: url(/content/img/design/icons/female.svg);
+    background-size: 100%;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    background-repeat: no-repeat;
+} */
+  .Menu--users {
+    min-width: 100% !important;
+  }
+  #main-content .school-section {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .school-accord-section {
+    width: 90%;
+  }
+  .school-section {
+    width: 90%;
+  }
+  .school-accord-section {
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  #slide-in-open {
+    margin-left: 12px !important;
+    width: 26px !important;
+  }
+  .wid-btn {
+    padding: 12px 22px;
+    font-size: 16px;
+  }
+  .dtwd_related-posts h4 {
+    font-size: 30px;
+    position: relative;
+  }
+
+  .bpress-page-header p {
+    font-size: 20px;
+  }
+  .bpress-page-header h1,
+  .bpress-page-header h2 {
+    font-size: 24px !important;
+  }
+
+  .page-title h1 {
+    font-size: 30px;
+    font-family: 'Gilroy-Bold';
+  }
+}
+
+footer .subs {
+  overflow: hidden;
+  height: 255px;
+  margin: 0 -50px;
+  text-align: center;
+}
+
+footer .subs iframe {
+  width: 380px;
+  height: 290px;
+  padding: 0;
+  overflow: hidden;
+  margin: -30px 0 -60px 0;
+}
+
+.page-id-286 .et_pb_tabs_controls li a {
+  line-height: 18px;
+  font-weight: 600;
+  padding: 0;
+}
+
+.page-id-286 .et_pb_tabs_0.et_pb_tabs .et_pb_tabs_controls li {
+  height: unset !important;
+  text-align: center;
+  padding: 15px;
+}
+.post.type-post .published:before {
+  content: "";
+  background: url(https://slotsparadise.com/wp-content/uploads/2022/03/Group-4377.png);
+  height: 18px;
+  width: 18px;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.post.type-post .published {
+  position: relative;
+  padding-left: 20px;
+  color: #491957;
+}
+
+.page-nav ul.children {
+  background: #fff;
+  padding: 10px;
+}
+.page-nav li.page_item:before {
+  content: "";
+  background: url(https://slotsparadise.com/wp-content/uploads/2022/03/Path-6732.png);
+  height: 22px;
+  width: 22px;
+  position: absolute;
+  left: -15px;
+}
+.page-nav li.page_item {
+  list-style: none;
+  padding: 8px 0px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.page-nav span.arrrow-icon:hover {
+  cursor: pointer;
+}
+.page-nav span.arrrow-icon {
+  font-size: 24px;
+  color: #2f0536;
+  position: absolute;
+  right: 0;
+  top: 15px;
+  background: url(https://slotsparadise.com/wp-content/uploads/2022/03/Path-6482.png);
+  background-repeat: no-repeat;
+  height: 15px;
+  width: 10px;
+  background-position: top right;
+}
+ul.children li.page_item:before {
+  display: none;
+}
+
+.nav-open .arrrow-icon {
+  /* transform: rotate(180deg);
+       transform: rotate(450deg);*/
+  transform: rotate(360deg);
+  height: 32px !important;
+}
+.header-section {
+  z-index: 2;
+}
+header .et_builder_inner_content {
+  z-index: unset;
+}
+div#et-main-area {
+  z-index: 1 !important;
+}
+.post-feature-img img {
+  border-radius: 8px;
+  box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
+}
+.casino-news-list .entry-featured-image-url img {
+  border-radius: 8px;
+  box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
+}
+.casino-news-home .entry-featured-image-url img {
+  border-radius: 8px;
+  box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
+  background: transparent !important;
+}
+.school-section {
+  background-color: transparent !important;
+  box-shadow: none;
+}
+.article-title h2 {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+.games-content .et_pb_section {
+  padding-top: 0;
+}
+.bpress-page-header h1 {
+  color: #fff;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+/*
+.bpress-page-header {
+    position: absolute;
+    width: 100%;
+    top: -16%;
+    margin: 0;
+    left: 0;
+    background: none;
+}
+.archive.tax-knowledgebase_cat .bpress-page-header {
+ 
+    top: -40%;
+  
+}*/
+
+.bpress-page-header {
+  background-image: url(https://slotsparadise.com/wp-content/uploads/2022/07/thebeach-guides.jpg) !important;
+  margin-top: 0;
+  background-repeat: no-repeat;
+  padding-top: 25px;
+  margin-bottom: 45px;
+}
+.bpress-page-header .bpress-content-wrap {
+  padding-bottom: 50px;
+}
+
+div.wpcr3_review blockquote.wpcr3_content p {
+  font-size: 14px;
+  line-height: 20px !important;
+  display: inline-block !important;
+  font-weight: 600;
+}
+div.wpcr3_review blockquote.wpcr3_content {
+  padding: 0 0 0 10px;
+  border-left: 2px solid #ff93aa;
+  font-size: 12px !important;
+  margin: 10px 0 10px 0;
+}
+.wpcr3_pagination .wpcr3_a.wpcr3_current,
+.wpcr3_pagination .wpcr3_a:hover {
+  background: #ff93aa;
+}
+.wpcr3_pagination .wpcr3_a {
+  background: #ddd;
+}
+div.wpcr3_dotline,
+div.wpcr3_review div.wpcr3_dotline,
+div.wpcr3_item_name {
+  display: none !important;
+}
+div.wpcr3_aggregateRating {
+  margin-bottom: 5px;
+}
+div.wpcr3_review {
+  position: relative;
+}
+.wpcr3_review_ratingValue {
+  background: #eee;
+  border-radius: 10px;
+  line-height: 34px !important;
+  height: 30px;
+  top: 0px;
+  margin-right: 0;
+  padding: 0 10px;
+  position: absolute;
+  width: 100%;
+}
+
+.wpcr3_review_datePublished {
+  position: absolute;
+  top: 0;
+  left: 33%;
+  line-height: 50px !important;
+  font-style: normal !important;
+  font-weight: 600;
+}
+
+.wpcr3_review_author {
+  font-style: normal !important;
+  font-weight: 600;
+}
+header .header-background {
+  z-index: 0;
+  margin-bottom: 75px;
+}
+.schema-faq-section {
+  margin-bottom: 20px;
+}
+
+.bpress-wrap * {
+  list-style: revert;
+}
+
+@media (min-width: 768px) {
+  .the-beach-page:before {
+    background: url(https://slotsparadise.com/the-beach/images/2023/03/jp-background.webp);
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 26px;
+    
+  }
+  h3 {
+    font-size: 22px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  h5 {
+    font-size: 16px;
+  }
+  h6 {
+    font-size: 14px;
+  }
+}
+
+/***************header*/
+.Menu--users {
+  right: 10px;
+  top: -10px;
+  position: absolute;
+  border: 1px solid #efefef;
+  background-color: #fff;
+  z-index: 1000;
+  display: none;
+  min-width: 252px;
+  width: 252px !important;
+  overflow: visible !important;
+}
+.Menu--users ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "nl us"
+    "nl id"
+    "bl bl"
+    "p p"
+    "w w"
+    "d d"
+    "wi wi"
+    "m m"
+    "h h"
+    "pr pr"
+    "cp cp"
+    "s s";
+}
+.Menu--users ul .pl-name_lastname {
+  grid-area: nl;
+  max-width: 100px;
+  background: #fff;
+  color: #ffa3b6;
+  font-weight: 600;
+  margin: 20px 10px 20px 15px;
+  text-transform: uppercase;
+  border: none;
+  text-align: center;
+}
+.Menu--users ul .pl-username {
+  grid-area: us;
+  margin-top: 20px;
+  border: none;
+  color: #a64485;
+  text-transform: uppercase;
+}
+.Menu--users ul .pl-id {
+  grid-area: id;
+  margin-bottom: 20px;
+  border: none;
+  margin-top: 0px;
+  color: #a64485;
+}
+.Menu--users ul li:nth-child(4) {
+  grid-area: bl;
+  background-color: #a64485;
+  color: #fff;
+  padding: 15px 0;
+  position: relative;
+  overflow: visible;
+}
+
+.Menu--users ul .pl-profile {
+  grid-area: p;
+}
+.Menu--users ul .pl-deposit {
+  grid-area: d;
+}
+.Menu--users ul .pl-history {
+  grid-area: h;
+}
+.Menu--users ul .pl-messages {
+  grid-area: m;
+}
+.Menu--users ul .pl-wallet {
+  grid-area: w;
+}
+.Menu--users ul .change_pass {
+  grid-area: cp;
+}
+.Menu--users ul .pl-promotions {
+  grid-area: pr;
+}
+.Menu--users ul .pl-withdraw {
+  grid-area: wi;
+}
+.Menu--users ul li:last-child {
+  border-bottom: 0;
+}
+.Menu--users ul .sign_out {
+  grid-area: s;
+}
+.Menu--users ul li {
+  list-style: none;
+  text-align: left;
+}
+.Menu--users ul li:nth-child(4) {
+  grid-area: bl;
+  background-color: #a64485;
+  color: #fff;
+  padding: 15px 0;
+  position: relative;
+  overflow: visible;
+}
+.Menu--users ul li:nth-child(4)::before {
+  content: " ";
+  display: block;
+  background-repeat: no-repeat;
+  width: 23px;
+  height: 100%;
+  margin: 0 0px 0 0px !important;
+  top: 0;
+  float: left;
+  background: #a64485;
+  position: absolute;
+  left: -23px;
+  z-index: 6;
+}
+.Menu--users ul li:nth-child(4)::after {
+  z-index: 23223;
+  content: " ";
+  display: block;
+  background-image: url(https://slotsparadise.com/content/img/design/icons/angle.png);
+  background-repeat: round;
+  width: 23px;
+  height: 20px;
+  margin: 0 0px 0 0px !important;
+  top: 100%;
+  float: left;
+  position: absolute;
+  left: -23px;
+}
+.Menu--users ul li a {
+  display: flex;
+  padding: 6px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #989494;
+}
+
+.la,
+.las {
+  font-family: "Line Awesome Free";
+  font-weight: 900;
+  padding-right: 10px;
+  margin-top: 5px;
+}
+a#usd-btn {
+  padding-right: 0.7em !important;
+}
+
+.wpcr3_reviews_holder .wpcr3_review .wpcr3_review_author {
+  display: block !important;
+  /* position: absolute;
+    top: 60px; */
+}
+
+div.wpcr3_review div.wpcr3_review_title {
+  font-size: 20px !important;
+  padding: 10px 0 0 0;
+}
+
+body .et-menu-nav #menu-main-menu .sub-menu {
+  box-shadow: none;
+  bottom: 0;
+  display: none;
+  left: 300px;
+  padding-left: 47px;
+  position: absolute;
+  top: 0;
+  width: 315px;
+  z-index: 10;
+  padding-top: 0;
+}
+
+.et-menu-nav #menu-main-menu {
+  left: 0;
+  position: relative;
+  /*transition: all 0.3s ease;*/
+}
+body .et-menu-nav.open #menu-main-menu {
+  left: -300px;
+}
+
+.et-menu-nav.open .sub-menu {
+  visibility: visible;
+  opacity: 1;
+}
+
+/** default ***/
+/*
+.nav li.et-touch-hover>ul, .nav li:hover>ul {
+    opacity: 0;
+    visibility: hidden;
+}*/
+.nav li ul {
+  border-top: none !important;
+}
+li#menu-item-1990 .span-wrap a:before {
+  background-image: url(https://slotsparadise.com/wp-content/themes/slotsparadise/images/all-games-ico-purple.svg);
+}
+.et-menu li li a {
+  width: auto !important;
+}
+
+.slide-in-menu-container.slide-in-menu {
+  min-width: 362px;
+  max-width: 362px;
+}
+.account-sec.et-last-child {
+  z-index: 0;
+}
+/* .header-section .et_pb_row.et_pb_row_0_tb_header {
+    z-index: 0;
+} */
+.slide-in-menu-container:after {
+  content: "";
+  background: rgb(18 18 18 / 73%);
+  position: fixed;
+  top: 0;
+  left: 362px;
+  bottom: 0;
+  transition: none;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+}
+.slide-in-menu-container.slide-in-menu:after {
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+  visibility: visible;
+}
+
+/************ reviews order change *********/
+.wpcr3_review :nth-child(1) {
+  order: 2;
+}
+.wpcr3_review :nth-child(2) {
+  order: 3;
+}
+.wpcr3_review :nth-child(3) {
+  order: 4;
+  display: inline-block;
+}
+.wpcr3_review :nth-child(4) {
+  order: 6;
+  display: inline-block;
+}
+.wpcr3_review :nth-child(5) {
+  order: 2; /* display: block !important; */
+}
+
+.wpcr3_review :nth-child(7) {
+  order: 1;
+}
+
+.wpcr3_review :nth-child(9) {
+  order: 8;
+}
+div.wpcr3_review {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.wpcr3_review .wpcr3_review_datePublished {
+  position: relative;
+  left: 0;
+}
+div.wpcr3_review div.wpcr3_review_ratingValue {
+  padding-left: 0;
+}
+
+/**** Quicke review ***/
+.digit {
+  position: absolute;
+  right: 0;
+}
+p.perc_val {
+  color: #46104e;
+}
+span.rvs_total {
+  font-weight: bold;
+}
+.wpcr3_review :nth-child(11) {
+  order: 8;
+}
+
+.single-knowledgebase figure.wp-block-image.size-large {
+  display: none;
+}
+
+@media (min-width: 1800px) {
+  .gamehub-last-section {
+    padding: 150px 0 !important;
+  }
+}
+
+@media (min-width: 767px) {
+  .game-review-first_img .et_pb_row {
+    display: flex;
+    align-items: center;
+  }
+}
+.page-id-6377
+  .et_pb_section.et_pb_section_3_tb_header.header-background.et_pb_with_background.et_section_regular {
+  display: none;
+}
+@media (max-width: 600px) {
+  .rating-img {
+    height: 13px;
+  }
+  .gamehub-last-section .last-section-row .last-section-text {
+    padding: 20px 22px;
+    font-size: 11px;
+  }
+
+  li.relted-games {
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.gameinfo .quick-chart .progress:nth-child(even) .bar {
+  position: relative;
+  float: left;
+  min-width: 1%;
+  height: 100%;
+  background: #ff93aa;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.125) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.125) 50%,
+    rgba(255, 255, 255, 0.125) 75%,
+    transparent 75%,
+    transparent
+  );
+  border-radius: 0 27px 27px 0;
+  background-size: 90px 90px;
+}
+
+.rating-col p,
+.rating-col,
+.percent {
+  color: #46104e;
+  font-family: "Gilroy-Light", Helvetica, Arial, Lucida, sans-serif;
+  font-weight: 600;
+}
+
+.rating-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.a2a_kit.a2a_kit_size_18.addtoany_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (min-width: 980px) {
+  .Menu--users {
+    min-height: 480px;
+  }
+  .menu-code-mods {
+    margin-bottom: 0 !important;
+  }
+}
+
+/*****Mobile menu **********/
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  /* width: 100%; 
+    height: 100%;  */
+  overflow: auto;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  right: 0;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.7s;
+  animation-name: slideIn;
+  animation-duration: 0.7s;
+}
+
+/* The Close Button */
+.close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-body {
+  padding: 2px 16px;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    right: -300px;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/**************** Show posts with shohortcode *************/
+.post-main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.post-article {
+  background: #fff 0% 0% no-repeat padding-box;
+  box-shadow: 0 4px 7px #0000001a;
+  border: 1px solid #eaeaea;
+  border-radius: 0 0 5px 5px;
+  opacity: 1;
+  width: 360px !important;
+  overflow: hidden;
+}
+
+div#category-posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+article.category-post {
+  background: #fff 0% 0% no-repeat padding-box;
+  box-shadow: 0 4px 7px #0000001a;
+  border: 1px solid #eaeaea;
+  border-radius: 0 0 5px 5px;
+  opacity: 1;
+  width: 360px;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+article.category-post .entry-title {
+  padding: 10px;
+}
+button#load-more-btnd:hover {
+  cursor: pointer;
+}
+button#load-more-btnd {
+  color: #2ea3f2;
+  border: 2px solid #2ea3f2;
+  padding: 15px;
+  border-radius: 50px;
+  background: none;
+  font-size: 20px;
+  font-family: "Gilroy ExtraBold", Helvetica, Arial, Lucida, sans-serif;
+  font-weight: 400;
+}
+@media (max-width: 767px) {
+  article.category-post {
+    width: 168px;
+  }
+  button#load-more-btnd {
+    font-size: 14px;
+  }
+}
+
+
+/***
+
+Css for astro site 
+
+**/
+
+.casino_school_main .page-nav li a {
+  color: #2f0536 !important;
+}
+
+/** basepress search astro **/
+
+.bpress-search {
+  position: relative;
+  height: 50px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.bpress-search-form {
+  position: relative;
+  height: 100%;
+}
+
+input[type="text"].bpress-search-field {
+  display: block;
+  max-width: 600px;
+  margin: 20px auto;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  background-color: #fafafa;
+  font-size: inherit;
+}
+
+.why-slots-tabs .tab-pgraph {
+  max-height: 233px;
+  padding-right: 10px;
+  scrollbar-width: thin;
+}
+
+.why-slots-tabs .tab-pgraph::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+.why-slots-tabs .tab-pgraph::-webkit-scrollbar {
+  width: 3px;
+  background-color: #f5f5f5;
+}
+
+.why-slots-tabs .tab-pgraph::-webkit-scrollbar-thumb {
+  background-color: #fff;
+}
+
+.single_article a {
+  color: #2ea3f2 !important;
+}
+
+.single_article ul {
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.single_article li {
+  list-style-type: disc;
+  margin-left: 10px;
+}
+
+.single_article p {
+  font-size: 20px;
+}
+
+.schema-faq-section strong {
+  font-size: 22px;
+  font-family: "Gilroy-ExtraBold" !important;
+}
+
+h4.wp-block-heading {
+  font-family: "Gilroy-ExtraBold";
+}
+
+.custom-date:before {
+  content: url("https://slotsparadise.com/wp-content/uploads/2022/03/Group-4377.png");
+}
+
+.casino_news_image img {
+  border-radius: 8px;
+  box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
+}
+
+.casino_news_blocks .post-excerpt {
+  display: -webkit-box; /* WebKit-specific flexbox */
+  -webkit-line-clamp: 3; /* WebKit-specific line clamp */
+  -webkit-box-orient: vertical; /* Vertical orientation for WebKit */
+  line-clamp: 3; /* Standard line clamp (for future compatibility) */
+  overflow: hidden; /* Hide overflow text */
+}
+
+.casino_news_blocks .right_block .thumb_img {
+  width: 40%;
+}
+
+.casino_news_blocks .right_block .thumb_container {
+  width: 55%;
+}
+
+.casino_news_blocks .right_block img {
+  border-radius: 8px;
+  height: 160px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.casino_news_blocks .right_block h3 {
+  color: #6a6c6e;
+  line-height: 1.1;
+  font-family: "Gilroy-Bold";
+}
+
+.casino_news_blocks .right_block p {
+  color: #2f0536;
+  font-family: "Gilroy-Regular";
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.casino_news_blocks .right_block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.casino_single_container .single_article p {
+  margin-bottom: 16px;
+}
+
+strong {
+  font-family: "Gilroy-ExtraBold";
+}
+/* 
+.bpress-sidebar div:nth-child(8) {
+  display: none;
+} */
+h2, h3 {
+  color: #ff688b;
+  font-weight: 900;
+  font-family: Gilroy-ExtraBold;
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 22px;
+}
+

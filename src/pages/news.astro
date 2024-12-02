@@ -1,0 +1,246 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { GRAPHQL_ENDPOINT } from "../data/endpoints";
+import { getSeoData } from "../lib/seoUtils";
+const seo = await getSeoData(Astro);
+---
+
+<Layout title={seo?.title}>
+  <div
+    class="news_page_container max-w-[1440px] mx-auto w-[80%] font-giloryRegular font-semibold text-base text-[#666]"
+  >
+    <div class="post-bread font-semibold my-10">
+      <div>
+        <p>
+          <span
+            ><span><a href="/">Home</a></span> &gt;
+            <span><a href="/news/">News</a></span>
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <h1
+          class="text-[30px] sm:text-4xl text-[#ff688b] pb-3 font-medium font-giloryExtrabold"
+        >
+          Casino News
+        </h1>
+        <p>
+          <span
+            >Our Casino News section is your source for the latest happenings in
+            the world of gambling and casinos. Stay informed on new casino
+            openings, industry developments, and changes in laws and
+            regulations. Discover the latest trends and innovations in the
+            casino industry and get insights into winning strategies and
+            tactics. From major tournament events to tips for success, Casino
+            News has everything you need to stay ahead in the world of online
+            gambling.</span
+          >
+        </p>
+        <p>
+          <span
+            >Whether you are a seasoned gambler or just starting out, this
+            section is your go-to resource for all things related to the casino
+            world. Stay informed, and stay ahead of the game, with Casino News.</span
+          >
+        </p>
+      </div>
+    </div>
+
+    <section
+      class="news_page max-w-[1440px] mx-auto px-4 my-16 min-h-screen"
+      id="page_content"
+    >
+    </section>
+
+    <div
+      class="button_container max-w-[1440px] mx-auto flex justify-between items-center mb-10"
+    >
+      <button id="nextPage">Next</button>
+      <button id="previousPage">Previous</button>
+    </div>
+  </div>
+
+  <script define:vars={{ GRAPHQL_ENDPOINT }}>
+    let endCursor = "null";
+    let startCursor = "null";
+
+    const renderPosts = (posts) => {
+      let postsHTML = "";
+
+      posts.forEach((post) => {
+        postsHTML += `
+              <article class="news_post_article flex flex-col md:flex-row gap-8 mb-16">
+                <a href="${post.node.uri}" class="block w-full md:w-[300px] rounded-lg overflow-hidden shadow-casinoBlock">
+                  <img src="${post.node.featuredImage.node.sourceUrl}" alt="${post.node.featuredImage.node.altText}" width="400" height="166" >
+                </a>
+
+                <div class="post-content w-full md:w-3/4">
+            <div class="post-content-inner">
+              <div class="text-[#ff688b] pb-3 font-medium font-giloryExtrabold text-xl sm:text-2xl">
+                <a href="${post.node.uri}">${post.node.title}</a>
+              </div>
+              <div class="line-clamp-2 mt-2">
+            <a
+              class=""
+              href="${post.node.uri}"
+              set:html=${post.node.excerpt}
+            />
+          </div>
+              <a
+                href="${post.node.uri}"
+                class="bg-[#a64485] inline-block text-white text-lg px-8 py-2 rounded-[25px] font-giloryExtrabold font-semibold uppercase hover:bg-[#ff93aa] cursor-pointer transition-all mt-5"
+              >
+                Read More
+              </a>
+            </div>
+          </div>
+
+
+              </article>
+            `;
+      });
+
+      document.getElementById("page_content").innerHTML = postsHTML;
+    };
+
+    const updatePreviousButtonVisibility = (hasPreviousPage) => {
+      const previousButton = document.getElementById("previousPage");
+      previousButton.style.display = hasPreviousPage ? "block" : "none";
+    };
+
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    };
+
+    const fetchNextPosts = async () => {
+      const response = await fetch(GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: `
+                query GetNewsPosts($endCursor: String!) {
+                  posts(where: { categoryName: "news" }, first: 10, after: $endCursor) {
+                    edges {
+                      node {
+                        id
+                        title
+                        date
+                        uri
+                        slug
+                        excerpt
+                        featuredImage {
+                          node {
+                            sourceUrl
+                            altText
+                          }
+                        }
+                      }
+                    }
+                    pageInfo {
+                      endCursor
+                      hasNextPage
+                      hasPreviousPage
+                      startCursor
+                    }
+                  }
+                }
+              `,
+          variables: {
+            endCursor: endCursor,
+          },
+        }),
+      });
+
+      const newData = await response.json();
+      //console.log(newData);
+
+      renderPosts(newData.data.posts.edges);
+
+      // Update the endCursor for the next request
+      endCursor = newData.data.posts.pageInfo.endCursor;
+
+      startCursor = newData.data.posts.pageInfo.startCursor;
+
+      // Update the visibility of the "Previous" button
+      updatePreviousButtonVisibility(
+        newData.data.posts.pageInfo.hasPreviousPage,
+      );
+
+      scrollToTop();
+    };
+
+    //query to fetch previous posts
+    const fetchPreviousPosts = async () => {
+      const response = await fetch(GRAPHQL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: `query GetNewsPosts($endCursor: String, $startCursor: String) {
+            posts(where: {categoryName: "news"}, after: $endCursor, last:10, before: $startCursor,) {
+                edges {
+                node {
+                    id
+                    title
+                    date
+                    uri
+                    slug
+                    excerpt
+                    featuredImage {
+                    node {
+                        sourceUrl
+                        altText
+                    }
+                    }
+                }
+                }
+                pageInfo {
+                endCursor
+                hasNextPage
+                hasPreviousPage
+                startCursor
+                }
+            }
+            }`,
+          variables: {
+            endCursor: null, // Reset endCursor for previous request
+            startCursor: startCursor,
+          },
+        }),
+      });
+
+      const newData = await response.json();
+      renderPosts(newData.data.posts.edges);
+      // Update the startCursor for the next request
+      startCursor = newData.data.posts.pageInfo.startCursor;
+      // Update the visibility of the "Previous" button
+      updatePreviousButtonVisibility(
+        newData.data.posts.pageInfo.hasPreviousPage,
+      );
+
+      scrollToTop();
+    };
+
+    // Fetch and render posts on page load
+    document.addEventListener("DOMContentLoaded", fetchNextPosts);
+
+    // Fetch and render next 10 posts on button click
+    document
+      .getElementById("nextPage")
+      .addEventListener("click", fetchNextPosts);
+
+    // Fetch and render next 10 posts on button click
+    document
+      .getElementById("previousPage")
+      .addEventListener("click", fetchPreviousPosts);
+  </script>
+</Layout>
