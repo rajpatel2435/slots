@@ -3,6 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import node from "@astrojs/node";
 import dotenv from 'dotenv';
 import path from 'path';
+import { clearUrl } from "./src/middleware/clearUrl.js";
 
 // Load environment variables from the chosen .env file
 const envFile = process.env.NODE_ENV === 'development' ? '.env.development' : '.env.production';
@@ -15,6 +16,9 @@ console.log("endpoint is", GRAPHQL_ENDPOINT);
 export default defineConfig({
   integrations: [tailwind()],
   base: "/",
+  middleware: [
+    clearUrl
+  ],
   trailingSlash: "always",
   output: "server",
   adapter: node({
